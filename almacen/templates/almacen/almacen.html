@@ -1,0 +1,48 @@
+{% extends "ProyectoWebApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+<div class="container">
+  <div class="row">
+
+
+
+{% for articulos in articulos %}
+
+  <div class="col-md-3">
+
+
+        <div class="card" style="width: 100%; margin: 10px 10px;">
+
+            <img src="{{articulos.imagen.url}}" class="card-img-top">
+
+            <div class="card-body" style="text-align: center;">
+
+                    <h7 class="card-title">{{articulos.nombre}}</h7>
+
+                    <p class="card-text">Precio: {{articulos.precio}}&nbsp;€</p>
+
+                    <p class="card-text">Stock: {{articulos.cantidad}}</p>
+
+                    <p class="card-text">Sección: {{articulos.seccion}}</p>
+
+
+
+            </div>
+
+
+        </div>
+  </div>
+    
+
+
+
+{% endfor %}
+
+  </div>
+</div>
+
+{% endblock %}
